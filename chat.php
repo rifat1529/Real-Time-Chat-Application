@@ -2,111 +2,78 @@
 session_start();
 include "db.php";
 
-/* login check */
 if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
     exit();
 }
 
-/* user select check */
 if(!isset($_GET['user'])){
     echo "No user selected";
     exit();
 }
 
-$receiver_id = intval($_GET['user']);
+$receiver_id = $_GET['user'];
 $sender_id = $_SESSION['user_id'];
 
-/* receiver info */
 $result = mysqli_query($conn,"SELECT username FROM users WHERE id='$receiver_id'");
 $user = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Chat</title>
 
-<style>
-
-body{
-font-family: Arial;
-background:#f0f2f5;
-}
-
-.chat-container{
-width:500px;
-margin:40px auto;
-background:white;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.chat-header{
-padding:15px;
-background:#0084ff;
-color:white;
-font-size:18px;
-}
-
-#chat-box{
-height:300px;
-overflow-y:auto;
-padding:10px;
-border-bottom:1px solid #ddd;
-}
-
-.chat-input{
-display:flex;
-padding:10px;
-}
-
-.chat-input input{
-flex:1;
-padding:10px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-.chat-input button{
-padding:10px 20px;
-margin-left:10px;
-background:#0084ff;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-</style>
+<link rel="stylesheet" href="CSS/style.css">
 
 </head>
 
 <body>
 
-<div class="chat-container">
+<header class="site-header">
+  <div class="container">
+    <h1 class="brand">Real-Time Chat</h1>
+    <nav class="nav">
+      <a class="nav-link" href="dashboard.php">Back</a>
+      <a class="nav-link" href="logout.php">Logout</a>
+    </nav>
+  </div>
+</header>
 
-<div class="chat-header">
-Chat with <?php echo htmlspecialchars($user['username']); ?>
-</div>
+<div class="container page">
+  <div class="chat-container">
 
-<div id="chat-box"></div>
+    <header class="chat-header">
+      <div class="chat-header-left">
+        <div class="avatar">
+          <?php echo strtoupper(substr($user['username'],0,1)); ?>
+        </div>
+        <div class="chat-title">
+          <div class="chat-name">Chat with <?php echo htmlspecialchars($user['username']); ?></div>
+          <div class="chat-sub">Connected · Active</div>
+        </div>
+      </div>
+    </header>
 
-<div class="chat-input">
-<input type="text" id="message" placeholder="Type message...">
-<button onclick="sendMessage()">Send</button>
-</div>
+    <main id="chat-box" class="chat-box" aria-live="polite" aria-atomic="false">
+     
+    </main>
 
+    <form class="chat-input" onsubmit="sendMessage(); return false;" aria-label="Send message">
+      <input type="text" id="message" placeholder="Type a message..." autocomplete="off" required>
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+
+  </div>
 </div>
 
 <script>
-
-/* important: receiver id */
-const receiver = <?php echo $receiver_id ?>;
-
+let receiver = <?php echo $receiver_id ?>;
 </script>
 
-<script src="js/chat.js"></script>
+<script src="Js/chat.js"></script>
 
 </body>
 </html>
