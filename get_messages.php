@@ -15,9 +15,9 @@ $result = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_assoc($result)){
 
     if($row['sender_id'] == $sender){
-        echo "<div style='text-align:right;color:blue;'>".$row['message']."</div>";
+        echo "<div class='msg-sent'>".htmlspecialchars($row['message'])."</div>";
     }else{
-        echo "<div style='text-align:left;color:black;'>".$row['message']."</div>";
+        echo "<div class='msg-received'>".htmlspecialchars($row['message'])."</div>";
     }
 
 }
