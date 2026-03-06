@@ -1,4 +1,3 @@
-```php
 <?php
 session_start();
 include "db.php";
@@ -15,7 +14,7 @@ if(!isset($_GET['user'])){
     exit();
 }
 
-$receiver_id = $_GET['user'];
+$receiver_id = intval($_GET['user']);
 $sender_id = $_SESSION['user_id'];
 
 /* receiver info */
@@ -88,7 +87,7 @@ cursor:pointer;
 <div class="chat-container">
 
 <div class="chat-header">
-Chat with <?php echo $user['username']; ?>
+Chat with <?php echo htmlspecialchars($user['username']); ?>
 </div>
 
 <div id="chat-box"></div>
@@ -102,7 +101,8 @@ Chat with <?php echo $user['username']; ?>
 
 <script>
 
-let receiver = <?php echo $receiver_id ?>;
+/* important: receiver id */
+const receiver = <?php echo $receiver_id ?>;
 
 </script>
 
@@ -110,4 +110,3 @@ let receiver = <?php echo $receiver_id ?>;
 
 </body>
 </html>
-```

@@ -2,8 +2,7 @@ function sendMessage(){
 
 let msg = document.getElementById("message").value;
 
-/* empty message check */
-if(msg.trim() === ""){
+if(msg.trim()==""){
 return;
 }
 
@@ -18,11 +17,11 @@ headers:{
 body:"message="+encodeURIComponent(msg)+"&receiver="+receiver
 
 })
-.then(res => res.text())
-.then(data => {
+.then(res=>res.text())
+.then(data=>{
 
 document.getElementById("message").value="";
-loadMessages(); // reload chat after send
+loadMessages();
 
 });
 
@@ -42,8 +41,6 @@ document.getElementById("chat-box").innerHTML=data;
 
 }
 
-/* load messages immediately */
 loadMessages();
 
-/* auto refresh every second */
 setInterval(loadMessages,1000);
