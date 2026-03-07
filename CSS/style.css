@@ -222,7 +222,19 @@ a {
   border-color: var(--primary-start);
   box-shadow: 0 0 0 3px rgba(102,126,234,0.18);
 }
+.msg-actions{
+margin-left:8px;
+font-size:14px;
+cursor:pointer;
+}
 
+.edit-icon{
+margin-right:5px;
+}
+
+.delete-icon{
+color:red;
+}
 .delete-btn{
 margin-left:8px;
 background:red;
