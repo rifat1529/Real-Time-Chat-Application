@@ -51,6 +51,32 @@ loadMessages();
 
 }
 
+function editMessage(id, oldMessage){
+
+let newMessage = prompt("Edit message:", oldMessage);
+
+if(newMessage != null && newMessage.trim() != ""){
+
+fetch("edit_message.php",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+
+body:"id="+id+"&message="+encodeURIComponent(newMessage)
+
+})
+.then(res=>res.text())
+.then(data=>{
+loadMessages();
+});
+
+}
+
+}
+
 function loadMessages(){
 
 fetch("get_messages.php?receiver="+receiver)
