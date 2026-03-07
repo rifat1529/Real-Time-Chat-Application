@@ -222,6 +222,14 @@ a {
   border-color: var(--primary-start);
   box-shadow: 0 0 0 3px rgba(102,126,234,0.18);
 }
+.my-msg button{
+margin-left:10px;
+background:red;
+color:white;
+border:none;
+padding:3px 6px;
+cursor:pointer;
+}
 
 .form-actions {
   display: flex;
