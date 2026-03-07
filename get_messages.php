@@ -17,14 +17,15 @@ while($row = mysqli_fetch_assoc($result)){
     if($row['sender_id'] == $sender){
 
         echo "<div class='msg-sent'>
-                <span>".htmlspecialchars($row['message'])."</span>
+        <span>".htmlspecialchars($row['message'])."</span>
 
-                <span class='msg-actions'>
-                    <i class='edit-icon' onclick='editMessage(".$row['id'].", \"".htmlspecialchars($row['message'])."\")'>✏️</i>
-                    <i class='delete-icon' onclick='deleteMessage(".$row['id'].")'>🗑️</i>
-                </span>
+        <span class='msg-actions'>
+            <i class='fa-solid fa-pen edit-icon' onclick='editMessage(".$row['id'].", \"".htmlspecialchars($row['message'])."\")'></i>
 
-              </div>";
+            <i class='fa-solid fa-trash delete-icon' onclick='deleteMessage(".$row['id'].")'></i>
+        </span>
+
+      </div>";
 
     }else{
 
