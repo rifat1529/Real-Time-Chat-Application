@@ -27,7 +27,7 @@ $result = mysqli_query($conn,"SELECT * FROM users WHERE id != $current_user");
 
   <main class="page container">
     <section class="card">
-      <h2>Select User to Chat</h2>
+      <h2>Active People</h2>
 
       <div class="users-list">
         <?php while($row = mysqli_fetch_assoc($result)): ?>
@@ -44,7 +44,7 @@ $result = mysqli_query($conn,"SELECT * FROM users WHERE id != $current_user");
 
   <footer class="site-footer">
     <div class="container">
-      <small>Choose a user to open chat.</small>
+      <small>Rohan Rifat.</small>
     </div>
   </footer>
 </body>
