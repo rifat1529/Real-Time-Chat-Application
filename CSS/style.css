@@ -222,6 +222,16 @@ a {
   border-color: var(--primary-start);
   box-shadow: 0 0 0 3px rgba(102,126,234,0.18);
 }
+
+.delete-btn{
+margin-left:8px;
+background:red;
+color:white;
+border:none;
+padding:2px 6px;
+cursor:pointer;
+font-size:12px;
+}
 .my-msg button{
 margin-left:10px;
 background:red;
