@@ -82,7 +82,7 @@ if(isset($_POST['login'])){
 
   <footer class="site-footer">
     <div class="container">
-      <small>Need help? Contact your instructor.</small>
+      <small>@ Real Time Chat Application.</small>
     </div>
   </footer>
 </body>

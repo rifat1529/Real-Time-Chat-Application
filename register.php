@@ -141,7 +141,7 @@ Registration Successful — <a href="login.php">Login now</a>
 
 <footer class="site-footer">
 <div class="container">
-<small>By registering you agree to classroom rules.</small>
+<small>@Real Time Chat Application.</small>
 </div>
 </footer>
 

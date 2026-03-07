@@ -20,9 +20,9 @@
   <main class="page container page-center">
     <section class="hero">
       <h2>Welcome to Chat App</h2>
-      <p class="muted">A simple real-time chat application for class/project use.</p>
+      <p class="muted">A simple real-time chat application .</p>
       <div class="cta">
-        <a class="btn" href="login.php">Get Started — Login</a>
+        <a class="btn" href="login.php"> Login</a>
         <a class="btn btn-muted" href="register.php">Create Account</a>
       </div>
     </section>
