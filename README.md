@@ -1,6 +1,6 @@
 # Real-Time Chat Application (PHP + MySQL)
 
-A simple **Real-Time Chat Application** built using **PHP, MySQL, JavaScript, AJAX, HTML, and CSS**.
+A simple **Real-Time Chat Application** built using **PHP, MySQL, JavaScript, HTML, and CSS**.
 Users can register, log in, upload a profile picture, and chat with other users in real time.
 
 This project demonstrates core web development concepts such as authentication, database interaction, AJAX requests, and dynamic UI updates.
@@ -12,7 +12,7 @@ This project demonstrates core web development concepts such as authentication, 
 * User Registration & Login
 * Secure Password Hashing
 * Profile Picture Upload
-* Real-Time Messaging (AJAX auto refresh)
+* Real-Time Messaging 
 * Edit Message
 * Delete Message
 * User Dashboard
